@@ -1,10 +1,13 @@
-import { createStore } from 'vuex';
-import productsModule from './modules/products';
-import cartModule from './modules/cart';
+import Vue from 'vue';
+import Vuex from 'vuex';
+import product from './modules/product'; // Import directly with correct name
+import cart from './modules/cart';
 
-export default createStore({
+Vue.use(Vuex);
+
+export default new Vuex.Store({
   modules: {
-    products: productsModule,
-    cart: cartModule
+    products: product, // Use the imported variable
+    cart: cart
   }
 });

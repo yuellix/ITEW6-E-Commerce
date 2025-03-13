@@ -1,5 +1,5 @@
 <template>
-  <!-- <div class="e-commerce-app">
+  <div class="e-commerce-app">
     <header>
       <h1>Vue E-Commerce Store</h1>
       <div class="cart-info">
@@ -8,39 +8,39 @@
           {{ isCartVisible ? 'Hide Cart' : 'Show Cart' }}
         </button>
       </div>
-    </header> -->
+    </header>
     
-    <!-- <main>
+    <main>
       <div class="app-content">
         <ProductList />
         <ShoppingCart v-if="isCartVisible" />
       </div>
     </main>
-  </div> -->
+  </div>
 </template>
 
 <script>
-// import { mapGetters } from 'vuex';
-// import ProductList from './components/ProductList.vue';
-// import ShoppingCart from './components/ShoppingCart.vue';
+import { mapGetters } from 'vuex';
+import ProductList from './components/ProductList.vue';
+import ShoppingCart from './components/ShoppingCart.vue';
 
-// export default {
-//   name: 'App',
-//   components: {
-//     ProductList,
-//     ShoppingCart
-//   },
-//   data() {
-//     return {
-//       isCartVisible: false
-//     };
-//   },
-//   computed: {
-//     ...mapGetters({
-//       cartItemCount: 'cart/cartItemCount'
-//     })
-//   }
-// };
+export default {
+  name: 'App',
+  components: {
+    ProductList,
+    ShoppingCart
+  },
+  data() {
+    return {
+      isCartVisible: false
+    };
+  },
+  computed: {
+    ...mapGetters({
+      cartItemCount: 'cart/cartItemCount'
+    })
+  }
+};
 </script>
 
 <style>

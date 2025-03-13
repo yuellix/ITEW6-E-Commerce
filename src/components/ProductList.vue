@@ -10,12 +10,13 @@
 <script>
 import { mapGetters } from 'vuex';
 import ProductItem from './ProductItem.vue';
-
 export default {
   name: 'ProductList',
   components: { ProductItem },
   computed: {
-    ...mapGetters('products', ['allProducts']),
+    ...mapGetters({
+      allProducts: 'products/allProducts'
+    }),
     products() {
       return this.allProducts;
     }
@@ -31,7 +32,6 @@ export default {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
-
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
